@@ -1,24 +1,43 @@
 package Bitmanipulation;
 
-public class CountSetBit {
+public class PowerOf2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-       
-		int a=41;
+
+		int a = 18;
+
+		int count = 0;
+		while (a != 0) {
+
+			int bit = a & 1;
+			count += bit;
+
+			a = a >> 1;
+		}
 		
-		int count=0;
+		if(count==1) {
+			System.out.println("a is Power of 2");
+		}else {
+			System.out.println("a is Not Power of 2");
+		}
+		
+		a=18;
+		if( (a & (a-1)) ==0) {
+			System.out.println("a is Power of 2");
+		}else {
+			System.out.println("a is not power of 2");
+		}
+		
+		
+		int count2=0;
 		while(a !=0) {
 			
-			int bit= a &1;
-			count+=bit;
-			
-			a=a>>1;
+			a= a& (a-1);
+			count2++;
 		}
-		System.out.println(count);
-		
-		
 		
 	}
+	
 
 }
